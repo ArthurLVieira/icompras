@@ -1,0 +1,20 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: pedidos
+  profiles:
+    active: conn
+  client:
+    config:
+      cliente:
+        url: ${URL_CLIENTE_SERVICE:http://localhost:8082/clientes}
+      produto:
+        url: ${URL_CLIENTE_SERVICE:http://localhost:8081/produtos}
+      kafka:
+        server-url: 'http://localhost:29092'
+        topics:
+          pedidos-pagos: 'icompras.pedidos-pagos'
+          pedidos-faturados: 'icompras.pedidos-faturados'
+          pedidos-enviados: 'icompras.pedidos-enviados'

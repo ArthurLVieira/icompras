@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: produtos
+  profiles:
+    active: conn
+server:
+  port: 8081
